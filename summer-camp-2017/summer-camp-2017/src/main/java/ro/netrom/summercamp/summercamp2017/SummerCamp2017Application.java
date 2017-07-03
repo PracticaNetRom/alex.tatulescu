@@ -11,4 +11,5 @@ public class SummerCamp2017Application {
 	public static void main(String[] args) {
 		SpringApplication.run(SummerCamp2017Application.class, args);
 	}
+
 }
