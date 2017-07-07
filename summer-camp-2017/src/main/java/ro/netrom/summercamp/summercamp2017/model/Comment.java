@@ -14,20 +14,24 @@ public class Comment {
 
 	private String content;
 
+	private String parent;
+
 	private String name;
 
 	private Date createDate;
 
 	private List<Comment> children;
 
-	@Override
-	public String toString() {
-		return "Comment [id=" + id + ", announcementId=" + announcementId + ", content=" + content + ", name=" + name
-				+ ", createDate=" + createDate + ", children=" + children + "]";
-	}
-
 	public Comment() {
 
+	}
+
+	public String getParent() {
+		return parent;
+	}
+
+	public void setParent(String parent) {
+		this.parent = parent;
 	}
 
 	public Integer getId() {

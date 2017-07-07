@@ -10,6 +10,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.http.converter.xml.MarshallingHttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.AsyncSupportConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -27,6 +28,12 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	public void configureViewResolvers(ViewResolverRegistry registry) {
 		registry.jsp("/WEB-INF/pages/", ".jsp");
 	}
+	
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+	     registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+	     registry.addResourceHandler("/WEB-INF/**").addResourceLocations("/WEB-INF/");
+	}  
 
 	@Override
 	public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {

@@ -29,6 +29,8 @@ public class Announcement {
 
 	private String ownerPhone;
 
+	private String location;
+
 	private String categoryName;
 
 	private String categoryDescription;
@@ -37,30 +39,20 @@ public class Announcement {
 
 	}
 
-	public Announcement(String title, String content, Boolean status, String confirmationCode, Date createDate,
-			Date expireDate, String ownerEmail, String ownerFirstName, String ownerLastName, String ownerPhone,
-			String categoryName, String categoryDescription) {
-		super();
-		this.title = title;
-		this.content = content;
-		this.status = status;
-		this.confirmationCode = confirmationCode;
-		this.createDate = createDate;
-		this.expireDate = expireDate;
-		this.ownerEmail = ownerEmail;
-		this.ownerFirstName = ownerFirstName;
-		this.ownerLastName = ownerLastName;
-		this.ownerPhone = ownerPhone;
-		this.categoryName = categoryName;
-		this.categoryDescription = categoryDescription;
-	}
-
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
 	}
 
 	public String getTitle() {
@@ -157,15 +149,6 @@ public class Announcement {
 
 	public void setCategoryDescription(String categoryDescription) {
 		this.categoryDescription = categoryDescription;
-	}
-
-	@Override
-	public String toString() {
-		return "Announcement [id=" + id + ", title=" + title + ", content=" + content + ", status=" + status
-				+ ", confirmationCode=" + confirmationCode + ", createDate=" + createDate + ", expireDate=" + expireDate
-				+ ", ownerEmail=" + ownerEmail + ", ownerFirstName=" + ownerFirstName + ", ownerLastName="
-				+ ownerLastName + ", ownerPhone=" + ownerPhone + ", categoryName=" + categoryName
-				+ ", categoryDescription=" + categoryDescription + "]";
 	}
 
 }
